@@ -121,7 +121,6 @@ Device.prototype.initInfo = function (sucCb, errCb) {
       }
 
       sucCb();
-      channel.onCordovaInfoReady.fire();
     },
     function (e) {
       me.available = false;
