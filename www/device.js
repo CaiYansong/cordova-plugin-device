@@ -119,8 +119,8 @@ Device.prototype.initInfo = function (sucCb, errCb) {
         me.sdkVersion = info.sdkVersion;
       }
 
-      channel.onCordovaInfoReady.fire();
       sucCb();
+      channel.onCordovaInfoReady.fire();
     },
     function (e) {
       me.available = false;
