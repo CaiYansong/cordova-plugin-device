@@ -47,39 +47,40 @@ function Device() {
 
   var me = this;
 
-  // channel.onCordovaReady.subscribe(function () {
-  //   me.getInfo(
-  //     function (info) {
-  //       // ignoring info.cordova returning from native, we should use value from cordova.version defined in cordova.js
-  //       // TODO: CB-5105 native implementations should not return info.cordova
-  //       var buildLabel = cordova.version;
-  //       me.available = true;
-  //       me.platform = info.platform;
-  //       me.version = info.version;
-  //       me.uuid = info.uuid;
-  //       me.cordova = buildLabel;
-  //       me.model = info.model;
-  //       me.isVirtual = info.isVirtual;
-  //       // isiOSAppOnMac is iOS specific. If defined, it will be appended.
-  //       if (info.isiOSAppOnMac !== undefined) {
-  //         me.isiOSAppOnMac = info.isiOSAppOnMac;
-  //       }
-  //       me.manufacturer = info.manufacturer || "unknown";
-  //       me.serial = info.serial || "unknown";
+  channel.onCordovaReady.subscribe(function () {
+    // me.getInfo(
+    //   function (info) {
+    //     // ignoring info.cordova returning from native, we should use value from cordova.version defined in cordova.js
+    //     // TODO: CB-5105 native implementations should not return info.cordova
+    //     var buildLabel = cordova.version;
+    //     me.available = true;
+    //     me.platform = info.platform;
+    //     me.version = info.version;
+    //     me.uuid = info.uuid;
+    //     me.cordova = buildLabel;
+    //     me.model = info.model;
+    //     me.isVirtual = info.isVirtual;
+    //     // isiOSAppOnMac is iOS specific. If defined, it will be appended.
+    //     if (info.isiOSAppOnMac !== undefined) {
+    //       me.isiOSAppOnMac = info.isiOSAppOnMac;
+    //     }
+    //     me.manufacturer = info.manufacturer || "unknown";
+    //     me.serial = info.serial || "unknown";
 
-  //       // SDK Version is Android specific. If defined, it will be appended.
-  //       if (info.sdkVersion !== undefined) {
-  //         me.sdkVersion = info.sdkVersion;
-  //       }
+    //     // SDK Version is Android specific. If defined, it will be appended.
+    //     if (info.sdkVersion !== undefined) {
+    //       me.sdkVersion = info.sdkVersion;
+    //     }
 
-  //       channel.onCordovaInfoReady.fire();
-  //     },
-  //     function (e) {
-  //       me.available = false;
-  //       console.error("[ERROR] Error initializing cordova-plugin-device: " + e);
-  //     }
-  //   );
-  // });
+    //     channel.onCordovaInfoReady.fire();
+    //   },
+    //   function (e) {
+    //     me.available = false;
+    //     console.error("[ERROR] Error initializing cordova-plugin-device: " + e);
+    //   }
+    // );
+    channel.onCordovaInfoReady.fire();
+  });
 }
 
 /**
